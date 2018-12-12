@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- ... -->
+<table id="table_collocate" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Power cabel UCE</td>
+            <td>001</td>
+        </tr>
+        <tr>
+            <td>Adapter</td>
+            <td>041</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    $(document).ready(function() {
+        $('#table_collocate').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+        });
+    });
+</script>

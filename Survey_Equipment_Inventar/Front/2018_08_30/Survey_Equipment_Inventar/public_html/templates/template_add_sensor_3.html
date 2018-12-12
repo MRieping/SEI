@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<p class='text_weseras' style="text-align: center;">Please add a picture to your sensor (optional).</p>
+<div class="row">
+    <div class="col-xs-12">
+
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_third_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+</ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script>
+$(document).ready(function templating_add_sensor_second_step() {
+    
+    $('#btn_add_sensor_previous_third_step').on('click', function(){
+        console.log("Try to change template for modal for adding new product to 'add_sensor_2");
+        $('#add_product_template').load('templates/template_add_sensor_2.html');
+    });
+});
+</script>

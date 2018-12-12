@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Search for any type</p>
+    </div>
+</div>
+<hr class="seperator">
+<div class="row">
+    <div class="fw-body">
+        <div class="content">
+            <table id="table_all_products" class="display responsive" style="width:100%">
+                <thead id="table_search_products_head">
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                        <th>Lowness</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody id="table_search_products_body">
+                    <tr class='table_row_placeholder'>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                    </tr>
+                </tbody>
+                <tfoot id="table_search_products_foot">
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                        <th>Lowness</th>
+                        <th>Location</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal for single item -->
+<div class="modal fade" id="modal_item_all" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal_item_all_header" class="modal-title">unknown</h4>
+            </div>
+            <div id="modal_item_all_body" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                </button>
+                <button class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                </button>
+                <button class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                </button>
+                <button class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                </button>
+                <button class="btn btn-delete" type="button">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal for single item -->
+<!-- Modal for asking: Sure to delete? -->
+<div class="modal fade" id="modal_single_product_delete_sure" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Are you sure to delete this sensor?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group btn-toggle"> 
+                    <button id="modal_single_product_delete_sure_yes" class="btn btn-sm btn-toggle-on">Yes</button>
+                    <button id="modal_single_product_delete_sure_no" class="btn btn-sm btn-toggle-off">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal for asking: Sure to delete? -->
+<!-- -->
+<script src="js/data_tables.js"></script>
+<script>
+    // ...
+    $(document).ready(function () {
+        // ...
+        get_products(0, 'all_products');
+    });
+</script>
+

@@ -1,0 +1,57 @@
+- neue Dinge aktualisieren (DB-Schema, SQL-Code, ...)
+
+- Tab für search products templaten
+	- je nach Produkttyp andere Filtermöglichkeiten und andere Tabelle/Spalten
+	- templating: wechsel mit effekt
+
+- location als klasse für storages und aircrafts (produkt kann nur in einem von beidem sein)
+
+- frontbasiertes filtern auch für einzelnen spalten versuchen
+
+- (kurzes) Pflichtenheft schreiben mit allen Funktionen und RESTful API (zumindest Interaktion zwischen Client und Server)
+
+- consolen-logging in JS
+
+- HTML, CSS und JS kommentieren
+
+- Footer wieder einbauen (?!)
+
+- welche Subklassen von Products?
+	- connector plate
+	- ...
+
+- spalte s in der excel: oft beschreibungen für beziehungen zwischen Produkten
+
+- libraries wie datatables runterladen und ggf. local einbinden
+
+- responsive design: unter bestimmter größe automatisch auf landscape schalten
+
+- search, edit, add, delete
+
+- info-button/-modal: auf startseite und evtl in modals
+
+- * für Pflichtfelder
+
+- Duplikate verhindern
+
+- aircraft und storage hinzufügen können (falls product hinzugefügt, muss überprüft werden, ob angegebene location existiert)
+
+- fehler bei spaltenbezeichnungen beheben
+
+- create table in ein js als funktion
+
+- neuen produkttypen anlegen
+
+- sowas wie z.b. elements beim adden: bereits existierende dem user anbieten
+
+- related cabels und related aircraft in modal modal_item_sensor einfügen (auch in edit, also dass man ne beziehung editieren oder löschen kann)
+
+- modal_item_sensor: zeile location: klickbar? und es fehlt noch possible locations (anzeige und editieren) 
+
+- bei sensorerstellung: bei locationauswahl: filtern ermöglichen
+
+- bei sensorerstellung: validierung der inputfelder
+
+- zusätzliche Spalte bei products: wann der location hinzugefügt? also seit wann liegt es dort?
+
+- hidden columns bei datatables mit dem Ziel die Suche zu templaten

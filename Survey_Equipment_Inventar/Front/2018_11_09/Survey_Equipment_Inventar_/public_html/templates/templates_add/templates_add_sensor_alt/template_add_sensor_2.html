@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p class='text_weseras' style = "text-align: center;">
+            Please select which other equipment has a relation to the new sensor and describe the relation.</p>
+        <div class="row">
+            <div class="col-xs-12">
+                <table id="add_new_sensor_select_related_equipment_list" class="display responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Elements</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody id="add_new_sensor_select_related_equipment_list_body">
+                        <tr>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Owner</th>
+                            <th>Elements</th>
+                            <th>Location</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_second_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+        <li class="next"><a id="btn_add_sensor_continue_second_step" href="#" class="text_weseras"><span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script src='js/fetch_data/fetch_products.js'></script>
+<script src='js/data_tables.js'></script>
+<script>
+    // ...
+    $(document).ready(function() {
+
+        //var wanted_attributes = ['item_number', 'item_name'];
+        //get_products('#add_new_sensor_select_related_equipment_list', wanted_attributes, 'table', 'sensors');
+        
+        var wanted_attributes = ['item_number', 'item_name', 'owner', 'elements', 'fk_location_name'];
+        get_products('#add_new_sensor_select_related_equipment_list_body', wanted_attributes, 'table', 'all_products');
+        
+        $('#add_new_sensor_select_related_equipment_list').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+        
+        /*
+        var table_select_related_equipemt = $('#table_select_related_equipment').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+        
+        $('#table_select_related_equipment tbody').on( 'click', 'tr', function () {
+            $(this).toggleClass('active');
+            alert( table_select_related_equipemt.rows('.active').data().length +' row(s) selected' );
+        } );
+
+        $('#btn_add_sensor_continue_second_step').click( function () {
+            alert( table_select_related_equipemt.rows('.active').data().length +' row(s) selected' );
+        });*/
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+        $('#btn_add_sensor_previous_second_step').on('click', function(){
+
+            console.log("Try to change template for modal for adding new product to 'add_sensor_1'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_1.html');
+
+        });
+
+        $('#btn_add_sensor_continue_second_step').on('click', function(){
+            console.log("Try to change template for modal for adding new product to 'add_sensor_3'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_3.html');
+            
+        });
+    });
+</script>

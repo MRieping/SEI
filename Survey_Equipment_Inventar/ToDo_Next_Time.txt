@@ -1,0 +1,29 @@
+- Spalten in der DB so umbenennen, dass sie client-seitig benutzt werden können
+- FKs in if else abfragen und speziell behandeln
+- get single product auch wenn alle typen gesucht werden
+- server.js
+	- aufräumen
+	- function sensor_product so anpassen, dass es mit jedem typen funktioniert 
+	- function zum hinzufügen ebenso anpassen -> beides/alles ebenso für locations
+	- function, um nur einen beliebigen eintrag aus einem produkttypen zu bekommen, um 
+	  deren spaltennamen zu bekommen (https://www.w3schools.com/sqL/sql_top.asp)
+- sql
+	- DB neu aufsetzen
+	- Tabellennamen für produkte sind jetzt in singular: müssen mit dropdown-button übereinstimmen
+	- alle spezifischen Attribute required machen, damit User diese nicht leer lässt, weil visuelle Anzeige hierfür fehlt?
+	- function add_sending dementsprechend typunabhänig anpassen
+	- alle spezifischen Attribute als char, damit nicht auf zahl überprüft werden muss
+- var vor variablen wie new_product?
+- wieder tabelle von datatables ins modal für single product
+- spezielle attribute eines produkttypen nicht required machen
+- tenant: string zwar fertig, aber dann muss es auch in die richtige tabelle geschrieben werden
+- für z.b. memory: wie einheit, also z.b. GB dem User anzeigen? - gleiches für wenn nur zahl erlaubt
+- Sonderfall: kein Eintrag in z.B. cable -> holen der speziellen Attribute nicht möglich
+	-> evtl. überall einen Platzhalter, der gelöscht wird, sobald ein erstes richtiges item
+	   hinzugefügt wird und wieder angelegt wird, sobald alle Einträge gelöscht sein sollten
+- join für single item verbessern, sodass nicht so viele zeilen geholt werden
+- löschen eines produktes bisher ohne, dass die beziehungen gelöscht werden
+- suche nach allen produkten: weitere spalte für typen, damit user den kennt und zum nutzen der weiteren funktionalitäten
+- location: jeder Ort, auch eine Zelle eines Schrankes hat einen eindeutigen Namen
+	-> Nutzer gibt nur diesen an, subklassen außer loan besitzen keine spezifischen Attribute
+	-> Lokalisierung/Identifizierung einer location über topologische Karte (?!)

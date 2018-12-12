@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<div class="row">
+    <div class="col-xs-12">
+        <p class='text_weseras' style="text-align: center;">Please confirm the new sensor.</p>
+        <form id="add_new_sensor_confirm">
+
+        </form>
+        <p class='text_weseras' style="text-align: center;">Everything alright? Then click the button.</p>
+    </div>
+</div>
+<div class="col row">
+    <div class="col-xs-12">
+        <button id="modal_add_sensor_btn" class="btn btn-weseras center-block" type="button">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+        </button>
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_fourth_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script>
+    $(document).ready(function templating_add_sensor_third_step() {
+
+        $('#add_product_template_footer_right').load('templates/template_add_sensor_footer');
+
+        $('#btn_add_sensor_previous_fourth_step').on('click', function(){
+            console.log("Try to change template for modal for adding new product to 'add_sensor_2");
+            $('#add_product_template').load('templates/template_add_sensor_2.html');
+        });
+    });
+</script>

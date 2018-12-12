@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Add new sensor</p>
+    </div>
+</div>
+<hr class="seperator">
+<ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" href="#add_new_sensor_tab_location">Location</a></li>
+    <li><a data-toggle="tab" href="#add_new_sensor_tab_relations">Relations</a></li>
+    <li><a data-toggle="tab" href="#add_new_sensor_tab_attributes">Attributes</a></li>
+    <li><a data-toggle="tab" href="#add_new_sensor_tab_confirm_and_photo">Confirm</a></li>
+</ul>
+<div class="tab-content">
+    <div id="add_new_sensor_tab_location" class="tab-pane fade in active">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Please select the real location.
+                        </p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button id="add_new_sensor_missing_location" type="button" class="btn btn-sm btn-weseras btn-full-width">
+                            Missing location?
+                        </button>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_new_sensor_table_location" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_new_sensor_table_location_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Please select possible locations.
+                        </p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn-group btn-toggle pull-right"> 
+                            <button id="add_new_sensor_btn_toggle_possible_locations_all" class="btn btn-sm btn-toggle-off">All</button>
+                            <button id="add_new_sensor_btn_toggle_possible_locations_none" class="btn btn-sm btn-toggle-on active">None</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_new_sensor_table_possible_locations" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_new_sensor_table_possible_locations_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Sensor borrowed?
+                        </p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="add_new_sensor_loan_since">Since</label>
+                                <input id="add_new_sensor_loan_since" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="add_new_sensor_loan_till">Till</label>
+                                <input id="add_new_sensor_loan_till" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="add_new_sensor_loan_tenant">Tenant</label>
+                                <input id="add_new_sensor_loan_tenant" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="add_new_sensor_tab_relations" class="tab-pane fade">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="add_new_sensor_info_text_related_equipment" class="text_weseras" style = "text-align: center;">
+                    Please select related equipment and describe the relation.
+                </p>
+            </div>
+        </div>
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_new_sensor_table_related_equipment" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Owner</th>
+                                    <th>Elements</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_new_sensor_table_related_equipment_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Owner</th>
+                                    <th>Elements</th>
+                                    <th>Description</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_new_sensor_tab_attributes" class="tab-pane fade">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class='text_weseras' style="text-align: center;">Please fill in this form.</p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_new_sensor_number">Number***</label>
+                                <input id="add_new_sensor_number" type="text" class="form-control" 
+                                       onkeyup="new_product.item_number = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_number', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_owner">Owner**</label>
+                                <input id="add_new_sensor_owner" type="text" class="form-control"
+                                       onkeyup="new_product.owner = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_owner', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_lowness">Lowness [cm]*</label>
+                                <input id="add_new_sensor_lowness" type="text" class="form-control" 
+                                       onkeyup="new_product.lowness = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_lowness', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_software">Software</label>
+                                <input id="add_new_sensor_software" type="text" class="form-control"
+                                       onkeyup="new_product.software = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_software', $(this).val())">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_new_sensor_name">Name**</label>
+                                <input id="add_new_sensor_name" type="text" class="form-control"
+                                       onkeyup="new_product.item_name = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_name', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_height">Height [cm]*</label>
+                                <input id="add_new_sensor_height" type="text" class="form-control" 
+                                       onkeyup="new_product.height = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_height', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_s_number">Serial Number**</label>
+                                <input id="add_new_sensor_s_number" type="text" class="form-control"
+                                       onkeyup="new_product.s_number = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_s_number', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_firmware">Firmware</label>
+                                <input id="add_new_sensor_firmware" type="text" class="form-control"
+                                       onkeyup="new_product.firmware = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_firmware', $(this).val())">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_new_sensor_elements">Elements**</label>
+                                <input id="add_new_sensor_elements" type="text" class="form-control"
+                                       onkeyup="new_product.elements = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_elements', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_width">Width [cm]*</label>
+                                <input id="add_new_sensor_width" type="text" class="form-control" 
+                                       onkeyup="new_product.width = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_width', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_new_sensor_p_number">P Number</label>
+                                <input id="add_new_sensor_p_number" type="text" class="form-control"
+                                       onkeyup="new_product.p_number = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_new_sensor_p_number', $(this).val())">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_new_sensor_description">Description</label>
+                                <textarea id="add_new_sensor_description" class="form-control" rows="4" style="resize: none;"
+                                        onkeyup="new_product.description = $(this).val()"
+                                        onchange="update_table_confirm('#confirm_new_sensor_description', $(this).val())"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras">*only numbers, **required, **required and only numbers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class='text_weseras' style="text-align: center;">Please upload at least one photo.</p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button id="add_sensor_btn_clear_photos" class="btn btn-sm btn-delete pull-right" type="button" style="margin-bottom: 5px;">
+                            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Clear
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="file" id="upload_images_sensor" name="files[]" multiple />
+                        <output id="upload_images_sensor_list"></output> 
+                        <!--<input type="file" onchange="encodeImageFileAsURL(this)"/>
+                        <output id="list"></output>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_new_sensor_tab_confirm_and_photo" class="tab-pane fade">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="add_new_sensor_info_text_confirm" class="text_weseras" style = "text-align: center;">
+                    Please confirm your new sensor.
+                </p>
+            </div>
+        </div>
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-error" id="add_sensor_alert" role="alert" style="display:none; margin-bottom: 5px;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Number*</td>
+                                    <td id="confirm_new_sensor_number"></td>
+                                </tr>
+                                <tr>
+                                    <td>Name*</td>
+                                    <td id="confirm_new_sensor_name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Location*</td>
+                                    <td id="confirm_new_sensor_location"></td>
+                                </tr>
+                                <tr>
+                                    <td>Owner*</td>
+                                    <td id="confirm_new_sensor_owner"></td>
+                                </tr>
+                                <tr>
+                                    <td>Elements*</td>
+                                    <td id="confirm_new_sensor_elements"></td>
+                                </tr>
+                                <tr>
+                                    <td>Height [cm]</td>
+                                    <td id="confirm_new_sensor_height"></td>
+                                </tr>
+                                <tr>
+                                    <td>Width [cm]</td>
+                                    <td id="confirm_new_sensor_width"></td>
+                                </tr>
+                                <tr>
+                                    <td>Lowness [cm]</td>
+                                    <td id="confirm_new_sensor_lowness"></td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td id="confirm_new_sensor_description"></td>
+                                </tr>
+                                <tr>
+                                    <td>Serial Number*</td>
+                                    <td id="confirm_new_sensor_s_number"></td>
+                                </tr>
+                                <tr>
+                                    <td>P Number</td>
+                                    <td id="confirm_new_sensor_p_number"></td>
+                                </tr>
+                                <tr>
+                                    <td>Software</td>
+                                    <td id="confirm_new_sensor_software"></td>
+                                </tr>
+                                <tr>
+                                    <td>Firmware</td>
+                                    <td id="confirm_new_sensor_firmware"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style='margin-top: 5px;'>
+                    <div class="col-sm-12">
+                        <p class="text_weseras">*required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Possible locations</td>
+                                    <td>
+                                        <textarea disabled id="confirm_new_sensor_possible_locations" 
+                                                  style = "resize: none;" rows="5">
+                                        </textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Related equipment</td>
+                                    <td>
+                                        <textarea disabled id="confirm_new_sensor_related_euqipment" 
+                                                  style = "resize: none;" rows="5">
+                                        </textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button id="add_sensor_btn_send" class="btn btn-sm btn-weseras btn-full-width" type="button" style="margin-bottom: 5px;">
+                            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Send
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/data_tables.js"></script>
+<script src='js/upload_images.js'></script>
+<script>
+    $(document).ready(function() {
+
+        table_select_location(
+            '#add_new_sensor_table_location', 
+            '#add_new_sensor_table_location_body',
+            '#confirm_new_sensor_location',
+            new_product
+        );
+        
+        toggle_buttons_possible_locations(
+            '#add_new_sensor_btn_toggle_possible_locations_all',
+            '#add_new_sensor_btn_toggle_possible_locations_none',
+            '#add_new_sensor_table_possible_locations_body',
+            '#confirm_new_sensor_possible_locations',
+            new_product
+        );
+
+        table_select_possible_locations(
+            '#add_new_sensor_table_possible_locations', 
+            '#add_new_sensor_table_possible_locations_body', 
+            '#confirm_new_sensor_possible_locations',
+            new_product
+        );
+
+        table_select_related_equipment(
+            '#add_new_sensor_table_related_equipment', 
+            '#add_new_sensor_table_related_equipment_body', 
+            '#confirm_new_sensor_related_euqipment',
+            new_product
+        );
+        
+        document.getElementById('upload_images_sensor').addEventListener('change', upload_images, false);
+
+        $("#add_new_sensor_scroll_to_possible_locations_down").click(function() {
+            $('html,body').animate({scrollTop: $("#add_new_sensor_info_text_possible_locations").offset().top},'slow');
+        });
+
+        $("#add_new_sensor_scroll_to_location_up").click(function() {
+            $('html,body').animate({scrollTop: $("#add_new_sensor_info_text_location").offset().top},'slow');
+        });
+        
+        $('#add_sensor_btn_send').click(function() {
+            templating_add_sending('#add_sensor_alert', new_product);
+        });
+    });
+</script>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<div class="row">
+    <div class="col-xs-4">
+        <p class='text_weseras'>Please confirm the new sensor.</p>
+        <table id="table_confirm_new_sensor" class="display responsive" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Number</td>
+                    <td id="confirm_new_sensor_number"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td id="confirm_new_sensor_name"></td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td id="confirm_new_sensor_location"></td>
+                </tr>
+                <tr>
+                    <td>Owner</td>
+                    <td id="confirm_new_sensor_owner"></td>
+                </tr>
+                <tr>
+                    <td>Elements</td>
+                    <td id="confirm_new_sensor_elements"></td>
+                </tr>
+                <tr>
+                    <td>Height [cm]</td>
+                    <td id="confirm_new_sensor_height"></td>
+                </tr>
+                <tr>
+                    <td>Width [cm]</td>
+                    <td id="confirm_new_sensor_width"></td>
+                </tr>
+                <tr>
+                    <td>Lowness [cm]</td>
+                    <td id="confirm_new_sensor_lowness"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td id="confirm_new_sensor_description"></td>
+                </tr>
+                <tr>
+                    <td>Serial Number</td>
+                    <td id="confirm_new_sensor_s_number"></td>
+                </tr>
+                <tr>
+                    <td>P Number</td>
+                    <td id="confirm_new_sensor_p_number"></td>
+                </tr>
+                <tr>
+                    <td>Software</td>
+                    <td id="confirm_new_sensor_software"></td>
+                </tr>
+                <tr>
+                    <td>Firmware</td>
+                    <td id="confirm_new_sensor_firmware"></td>
+                </tr>
+                <tr>
+                    <td>Possible locations</td>
+                    <td>
+                        <div id="confirm_new_sensor_possible_locations" class="list-group">
+
+                        </div> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Related equipment</td>
+                    <td>
+                        <div id="confirm_new_sensor_related_euqipment" class="list-group">
+
+                        </div> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-xs-4">
+        <p class='text_weseras'>Please upload at least one photo.</p>
+        <input type="file" id="upload_images_sensor" name="files[]" multiple />
+	<output id="upload_images_sensor_list"></output> 
+        <!--<input type="file" onchange="encodeImageFileAsURL(this)"/>
+        <output id="list"></output>-->
+    </div>
+    <div class="col-xs-4">
+        <p class='text_weseras' style="text-align: center;">Everything alright? Then click the button.</p>
+        <button id="modal_add_sensor_btn" class="btn btn-weseras center-block" type="button">
+            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+        </button>
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_fourth_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script src='js/upload_images.js'></script>
+<script>
+    // ...
+    $(document).ready(function() {
+        
+        console.log('Sensor wanted to add:');
+        console.log(new_product);
+
+        new_product.images = [];
+        
+        $('#confirm_new_sensor_number').text(new_product.item_number);
+        $('#confirm_new_sensor_name').text(new_product.item_name);
+        $('#confirm_new_sensor_location').text(new_product.item_location);
+        $('#confirm_new_sensor_owner').text(new_product.owner);
+        $('#confirm_new_sensor_elements').text(new_product.elements);
+        $('#confirm_new_sensor_height').text(new_product.height);
+        $('#confirm_new_sensor_width').text(new_product.width);
+        $('#confirm_new_sensor_lowness').text(new_product.lowness);
+        $('#confirm_new_sensor_description').text(new_product.description);
+        $('#confirm_new_sensor_s_number').text(new_product.s_number);
+        $('#confirm_new_sensor_p_number').text(new_product.p_number);
+        $('#confirm_new_sensor_software').text(new_product.software);
+        $('#confirm_new_sensor_firmware').text(new_product.firmware);
+        $('#confirm_new_sensor_possible_locations').text(new_product.possible_locations);
+        //$('#confirm_new_sensor_related_equipment').text(new_product.related_equipment);
+        
+        //
+        $('#table_confirm_new_sensor').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            "searching": false
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        
+        document.getElementById('upload_images_sensor').addEventListener('change', upload_images, false);
+
+        $('#btn_add_sensor_previous_fourth_step').on('click', function(){
+            console.log("Try to change template for modal for adding new product to 'add_sensor_3'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_3.html');
+        });
+    });
+</script>

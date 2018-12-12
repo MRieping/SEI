@@ -1,0 +1,88 @@
+/* 
+    Created on : 16.08.2018, 09:25:13
+    Author     : MRieping
+*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #003e8c;
+}
+
+.content {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+}
+
+.header {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  background-color: #8f93c3;
+}
+
+.footer_text {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  margin: auto;
+  color: white;
+  text-align: center;
+  font-family: verdana;
+}
+
+.nav {
+  font-family: verdana;
+}
+
+.tab-pane {
+  padding-top: 1.25em;
+  align-items: center;
+}
+
+.btn-weseras {
+    background-color: #003e8c;
+    color: white;
+}
+
+.navbar-default {
+    background-color: #003e8c;
+}
+
+.seperator {
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+    border-color:  #8f93c3;
+}
+
+.input-group {
+    margin-bottom: 1.25em;
+}
+
+.input-form {
+    margin-bottom: 1.25em;
+}
+
+.center {
+    margin: auto;
+    width: 99%;
+    padding: 10px;
+}
+
+.row_filter {
+    margin-bottom: 50px;
+}

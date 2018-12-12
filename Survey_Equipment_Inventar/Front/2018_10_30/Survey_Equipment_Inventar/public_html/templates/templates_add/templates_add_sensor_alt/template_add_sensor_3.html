@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<div class="alert alert-error" id="alert_error_fill_form_sensor" role="alert" style="display:none; margin-bottom: 5px;">
+    Please fill in all required fields.
+</div>
+<p class='text_weseras' style="text-align: center;">Please fill in this form.</p>
+<div class="row">
+    <div class="col-xs-4">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_number">Number***</label>
+                <input id="add_new_sensor_number" type="text" class="form-control" onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_owner">Owner**</label>
+                <input id="add_new_sensor_owner" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_lowness">Lowness*</label>
+                <input id="add_new_sensor_lowness" type="text" class="form-control" onkeypress="return isNumber(event)">
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-4">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_name">Name**</label>
+                <input id="add_new_sensor_name" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_height">Height*</label>
+                <input id="add_new_sensor_height" type="text" class="form-control" onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_s_number">Serial Number**</label>
+                <input id="add_new_sensor_s_number" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-4">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_elements">Elements**</label>
+                <input id="add_new_sensor_elements" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_width">Width*</label>
+                <input id="add_new_sensor_width" type="text" class="form-control" onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_p_number">P Number</label>
+                <input id="add_new_sensor_p_number" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-4">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_software">Software</label>
+                <input id="add_new_sensor_software" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="add_new_sensor_firmware">Firmware</label>
+                <input id="add_new_sensor_firmware" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-8">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_description">Description</label>
+                <textarea id="add_new_sensor_description" class="form-control" rows="4" style="resize: none;"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col row">
+    <div class="col-xs-12">
+        <p class="text_weseras">*only numbers, **required, **required and only numbers</p>
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_third_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+        <li class="next"><a id="btn_add_sensor_continue_third_step" href="#" class="text_weseras"><span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script src='js/forms.js'></script>
+<script>
+    $(document).ready(function() {
+
+        if (typeof new_product !== 'undefined') {
+            $('#add_new_sensor_number').val(new_product.item_number);
+            $('#add_new_sensor_name').val(new_product.item_name);
+            $('#add_new_sensor_owner').val(new_product.owner);
+            $('#add_new_sensor_elements').val(new_product.elements);
+            $('#add_new_sensor_description').val(new_product.description);
+            $('#add_new_sensor_height').val(new_product.height);
+            $('#add_new_sensor_width').val(new_product.width);
+            $('#add_new_sensor_lowness').val(new_product.lowness);
+            $('#add_new_sensor_s_number').val(new_product.s_number);
+            $('#add_new_sensor_p_number').val(new_product.p_number);
+            $('#add_new_sensor_software').val(new_product.software);
+            $('#add_new_sensor_firmware').val(new_product.firmware);
+        }
+
+        $('#btn_add_sensor_previous_third_step').on('click', function(){
+
+            console.log("Try to change template for modal for adding new product to 'add_sensor_2'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_2.html');
+            $('#modal_add_required_field').show();
+
+        });
+
+        $('#btn_add_sensor_continue_third_step').on('click', function(){
+
+            item_number = $('#add_new_sensor_number').val();
+            item_name = $('#add_new_sensor_name').val();
+            owner = $('#add_new_sensor_owner').val();
+            elements = $('#add_new_sensor_elements').val();
+            description = $('#add_new_sensor_description').val();
+            height = $('#add_new_sensor_height').val();
+            width = $('#add_new_sensor_width').val();
+            lowness = $('#add_new_sensor_lowness').val();
+            s_number = $('#add_new_sensor_s_number').val();
+            p_number = $('#add_new_sensor_p_number').val();
+            software = $('#add_new_sensor_software').val();
+            firmware = $('#add_new_sensor_firmware').val();
+            
+            if(item_number.length === 0 || item_name.length === 0 || owner.length === 0
+                    || elements.length === 0 || s_number.length === 0) {
+                $('#alert_error_fill_form_sensor').fadeIn();
+                setTimeout(function () {$('#alert_error_fill_form_sensor').fadeOut();}, 7342); 
+            } else {          
+                console.log("Try to change template for modal for adding new product to 'add_sensor_4'");
+                $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_4.html');
+                
+                new_product.item_number = item_number;
+                new_product.item_name = item_name;
+                new_product.owner= owner;
+                new_product.elements = elements;
+                new_product.description = description;
+                new_product.height = height;
+                new_product.width = width;
+                new_product.lowness = lowness;
+                new_product.s_number = s_number;
+                new_product.p_number = p_number;
+                new_product.software = software;
+                new_product.firmware = firmware;
+            }
+        });
+    });
+</script>

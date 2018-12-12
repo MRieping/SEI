@@ -1,0 +1,76 @@
+CREATE TABLE "aircraft" (
+  "id" SERIAL CONSTRAINT "pk_aircraft" PRIMARY KEY,
+  "aircraft_name" TEXT NOT NULL
+);
+
+CREATE TABLE "storage" (
+  "id" SERIAL CONSTRAINT "pk_storage" PRIMARY KEY,
+  "row" TEXT NOT NULL,
+  "box" TEXT NOT NULL
+);
+
+CREATE TABLE "product" (
+  "id" SERIAL CONSTRAINT "pk_product" PRIMARY KEY,
+  "item_name" TEXT UNIQUE NOT NULL,
+  "item_number" TEXT UNIQUE NOT NULL,
+  "quantity" INTEGER NOT NULL DEFAULT 1,
+  "elements" TEXT NOT NULL,
+  "owner" TEXT NOT NULL,
+  "description" TEXT NOT NULL,
+  "height" DOUBLE PRECISION,
+  "width" DOUBLE PRECISION,
+  "lowness" DOUBLE PRECISION,
+  "storage" INTEGER,
+  "aircraft_installed" INTEGER,
+  "classtype" TEXT NOT NULL,
+  "s_number" TEXT,
+  "p_number" TEXT,
+  "software_version" TEXT,
+  "length" TEXT,
+  "plus" TEXT,
+  "minus" TEXT,
+  "memory" DOUBLE PRECISION
+);
+
+CREATE INDEX "idx_product__aircraft_installed" ON "product" ("aircraft_installed");
+
+CREATE INDEX "idx_product__storage" ON "product" ("storage");
+
+ALTER TABLE "product" ADD CONSTRAINT "fk_product__aircraft_installed" FOREIGN KEY ("aircraft_installed") REFERENCES "aircraft" ("id");
+
+ALTER TABLE "product" ADD CONSTRAINT "fk_product__storage" FOREIGN KEY ("storage") REFERENCES "storage" ("id");
+
+CREATE TABLE "aircraft_products_possible" (
+  "product" INTEGER NOT NULL,
+  "aircraft" INTEGER NOT NULL,
+  CONSTRAINT "pk_aircraft_products_possible" PRIMARY KEY ("product", "aircraft")
+);
+
+CREATE INDEX "idx_aircraft_products_possible" ON "aircraft_products_possible" ("aircraft");
+
+ALTER TABLE "aircraft_products_possible" ADD CONSTRAINT "fk_aircraft_products_possible__aircraft" FOREIGN KEY ("aircraft") REFERENCES "aircraft" ("id");
+
+ALTER TABLE "aircraft_products_possible" ADD CONSTRAINT "fk_aircraft_products_possible__product" FOREIGN KEY ("product") REFERENCES "product" ("id");
+
+CREATE TABLE "cabel_cabels" (
+  "cabel" INTEGER NOT NULL,
+  "cabel_2" INTEGER NOT NULL,
+  CONSTRAINT "pk_cabel_cabels" PRIMARY KEY ("cabel", "cabel_2")
+);
+
+CREATE INDEX "idx_cabel_cabels" ON "cabel_cabels" ("cabel_2");
+
+ALTER TABLE "cabel_cabels" ADD CONSTRAINT "fk_cabel_cabels__cabel" FOREIGN KEY ("cabel") REFERENCES "product" ("id");
+
+ALTER TABLE "cabel_cabels" ADD CONSTRAINT "fk_cabel_cabels__cabel_2" FOREIGN KEY ("cabel_2") REFERENCES "product" ("id");
+
+CREATE TABLE "photo" (
+  "id" SERIAL CONSTRAINT "pk_photo" PRIMARY KEY,
+  "photo_name" TEXT UNIQUE,
+  "path" TEXT UNIQUE,
+  "product" INTEGER NOT NULL
+);
+
+CREATE INDEX "idx_photo__product" ON "photo" ("product");
+
+ALTER TABLE "photo" ADD CONSTRAINT "fk_photo__product" FOREIGN KEY ("product") REFERENCES "product" ("id")

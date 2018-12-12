@@ -1,0 +1,97 @@
+<table id="table_edit_sensor" class="display responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody id="table_edit_sensor_body">
+        <tr>
+            <td>Number</td>
+            <td id="modal_item_sensor_number"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td id="modal_item_sensor_location"></td>
+        </tr>
+        <tr>
+            <td>Owner</td>
+            <td id="modal_item_sensor_owner"></td>
+        </tr>
+        <tr>
+            <td>Elements</td>
+            <td id="modal_item_sensor_elements"></td>
+        </tr>
+        <tr>
+            <td>Height [cm]</td>
+            <td id="modal_item_sensor_height"></td>
+        </tr>
+        <tr>
+            <td>Width [cm]</td>
+            <td id="modal_item_sensor_width"></td>
+        </tr>
+        <tr>
+            <td>Lowness [cm]</td>
+            <td id="modal_item_sensor_lowness"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td id="modal_item_sensor_description"></td>
+        </tr>
+        <tr>
+            <td>Serial Number</td>
+            <td id="modal_item_sensor_s_number"></td>
+        </tr>
+        <tr>
+            <td>P Number</td>
+            <td id="modal_item_sensor_p_number"></td>
+        </tr>
+        <tr>
+            <td>Software</td>
+            <td id="modal_item_sensor_software"></td>
+        </tr>
+        <tr>
+            <td>Firmware</td>
+            <td id="modal_item_sensor_firmware"></td>
+        </tr>
+        <tr>
+            <td>Possible locations</td>
+            <td>
+                <div id="modal_item_possible_locations" class="list-group">
+
+                </div> 
+            </td>
+        </tr>
+        <tr>
+            <td>Related equipment</td>
+            <td>
+                <div id="modal_item_sensor_related_euqipment" class="list-group">
+
+                </div> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    // ...
+    $(document).ready(function() {
+                
+        //table_for_modals('#table_edit_sensor');
+        
+        $('#table_edit_sensor').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+    });
+</script>

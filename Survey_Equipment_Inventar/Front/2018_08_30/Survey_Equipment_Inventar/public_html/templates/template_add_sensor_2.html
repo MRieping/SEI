@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<div class="row">
+    <div class="col-xs-6">
+        <form>
+            <div class="form-group">
+                <label for="add_new_sensor_desctiption">Description (optional)</label>
+                <textarea id="add_new_sensor_desctiption" class="form-control" rows="5" style="resize: none;"></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6">
+        <div class = 'row'>
+            <div class = 'col-xs-12'>
+                <p class='text_weseras' style = 'text-align: center;'>Select a location ...</p>
+                <form>
+                    <div class="form-group">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class = 'row'>
+            <div class = 'col-xs-12'>
+                <p class='text_weseras' style = 'text-align: center;'>... or create a new one</p>
+                <form>
+                    <div class="form-group">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<nav>
+    <ul class="pager">
+        <li class="previous" id='btn_add_sensor_previous_second_step'><a href="#" class="text_weseras"><span aria-hidden="true">&larr;</span></a></li>
+        <li class="next"><a id="btn_add_sensor_continue_second_step" href="#" class="text_weseras"><span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script>
+$(document).ready(function templating_add_sensor_second_step() {
+    
+    $('#btn_add_sensor_previous_second_step').on('click', function(){
+        console.log("Try to change template for modal for adding new product to 'add_sensor_1");
+        $('#add_product_template').load('templates/template_add_sensor_1.html');
+    });
+
+    $('#btn_add_sensor_continue_second_step').on('click', function(){
+        console.log("Try to change template for modal for adding new product to 'add_sensor_3");
+        $('#add_product_template').load('templates/template_add_sensor_3.html');
+    });
+});
+</script>

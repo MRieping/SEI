@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Filter -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="input-group">
+            <input id="input_general_search" type="text" class="form-control" placeholder="Anything">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Name">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Number">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <!-- empty col -->
+            </div>
+            <div class="col-xs-4">
+                <div class="dropdown">
+                    <button class="btn btn-weseras dropdown-toggle center" type="button" data-toggle="dropdown">Type
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu center">
+                      <li id="btn_search_all"><a href="#">All</a></li>
+                      <li id="btn_search_camera"><a href="#">Power cabels</a></li>
+                    </ul>
+                </div>                               
+            </div>
+            <div class="col-xs-4">
+                <!-- empty col -->
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Plus">
+                <div class="input-group-btn">
+                  <button class="btn btn-weseras" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Owner">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Elements">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Length">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Minus">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Filter -->
+<hr class="seperator">
+<!-- empty table to fill with list of products -->
+<div class="row">
+    <table class="table table-responsive table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Owner</th>
+                <th>Elements</th>
+                <th>Type</th>
+                <th>Lenght</th>
+                <th>Plus</th>
+                <th>Minus</th>
+            </tr>
+        </thead>
+        <tbody id="table_products">
+            <tr class="table-row">
+                <td>Max Mustermann</td>
+                <td>42</td>
+                <td>Weseras</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+            <tr class="table-row">
+                <td>Laura Musterfrau</td>
+                <td>64</td>
+                <td>AVT</td>
+                <td>leer</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+            <tr class="table-row">
+                <td>Test</td>
+                <td>38</td>
+                <td>Weseras</td>
+                <td>nichts</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- /empty table to fill with list of products -->
+<script src="js/searching.js"></script>

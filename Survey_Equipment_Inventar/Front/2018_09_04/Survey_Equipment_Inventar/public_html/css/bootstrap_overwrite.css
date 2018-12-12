@@ -1,0 +1,138 @@
+/* 
+    Created on : 16.08.2018, 09:25:13
+    Author     : MRieping
+*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background-color: #8f93c3;
+}
+
+.content {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+}
+
+.header {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  background-color: #003e8c;
+}
+
+.footer_text {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  margin: auto;
+  color: white;
+  text-align: center;
+  font-family: verdana;
+}
+
+.nav {
+  font-family: verdana;
+}
+
+.tab-pane {
+  padding-top: 1.25em;
+  align-items: center;
+}
+
+.btn-weseras {
+    background-color: white;
+    color: #003e8c;
+    border-color: #003e8c;
+}
+
+.btn-footer-help {
+    background-color: #8f93c3;
+    color: white;
+    border-color: #8f93c3;
+}
+
+.navbar-default {
+    background-color: #003e8c;
+}
+
+.seperator {
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+    border-color:  #003e8c;
+}
+
+.input-group {
+    margin-bottom: 1.25em;
+}
+
+.input-form {
+    margin-bottom: 1.25em;
+}
+
+.center {
+    margin: auto;
+    width: 99%;
+    padding: 10px;
+}
+
+.row_item {
+    cursor: pointer;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 0.625em;
+    box-sizing: border-box;
+}
+
+.badge_weseras {
+    background-color: #003e8c;
+}
+
+.btn-delete {
+    background-color: white;
+    color: #c93232;
+    border-color: #c93232;
+}
+
+.text_weseras {
+    color: #003e8c;
+}
+
+.alert-error {
+    background-color: white;
+    color: #c93232;
+    border-color: #c93232;
+    text-align: center;
+}
+
+.location_list {
+    height:250px;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+
+.vorschau {
+	height: 75px;
+	border: 1px solid #000;
+	margin: 10px 5px 0 0;
+}
+
+output {
+	display: block;
+}

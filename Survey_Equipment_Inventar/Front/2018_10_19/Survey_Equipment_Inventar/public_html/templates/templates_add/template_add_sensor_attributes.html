@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-3">
+        <form>
+            <div class="form-group">
+                <label for="add_number">Number***</label>
+                <input id="add_number" type="text" class="form-control" 
+                       onkeyup="new_product.item_number = $(this).val()"
+                       onchange="update_table_confirm('#confirm_number', $(this).val())"
+                       onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_name">Name**</label>
+                <input id="add_name" type="text" class="form-control"
+                       onkeyup="new_product.item_name = $(this).val()"
+                       onchange="update_table_confirm('#confirm_name', $(this).val())">
+            </div>
+            <div class="form-group">
+                <label for="add_elements">Elements**</label>
+                <input id="add_elements" type="text" class="form-control"
+                       onkeyup="new_product.elements = $(this).val()"
+                       onchange="update_table_confirm('#confirm_elements', $(this).val())">
+            </div>
+            <div class="form-group">
+                <label for="add_owner">Owner**</label>
+                <input id="add_owner" type="text" class="form-control"
+                       onkeyup="new_product.owner = $(this).val()"
+                       onchange="update_table_confirm('#confirm_owner', $(this).val())">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3">
+        <form>
+            <div class="form-group">
+                <label for="add_height">Height [cm]*</label>
+                <input id="add_height" type="text" class="form-control" 
+                       onkeyup="new_product.height = $(this).val()"
+                       onchange="update_table_confirm('#confirm_height', $(this).val())"
+                       onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_width">Width [cm]*</label>
+                <input id="add_width" type="text" class="form-control" 
+                       onkeyup="new_product.width = $(this).val()"
+                       onchange="update_table_confirm('#confirm_width', $(this).val())"
+                       onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_lowness">Lowness [cm]*</label>
+                <input id="add_lowness" type="text" class="form-control" 
+                       onkeyup="new_product.lowness = $(this).val()"
+                       onchange="update_table_confirm('#confirm_lowness', $(this).val())"
+                       onkeypress="return isNumber(event)">
+            </div>
+            <div class="form-group">
+                <label for="add_s_number">Serial Number**</label>
+                <input id="add_s_number" type="text" class="form-control"
+                       onkeyup="new_product.s_number = $(this).val()"
+                       onchange="update_table_confirm('#confirm_s_number', $(this).val())">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3">
+        <form>
+            <div class="form-group">
+                <label for="add_p_number">P Number</label>
+                <input id="add_p_number" type="text" class="form-control"
+                       onkeyup="new_product.p_number = $(this).val()"
+                       onchange="update_table_confirm('#confirm_p_number', $(this).val())">
+            </div>
+            <div class="form-group">
+                <label for="add_software">Software</label>
+                <input id="add_software" type="text" class="form-control"
+                       onkeyup="new_product.software = $(this).val()"
+                       onchange="update_table_confirm('#confirm_software', $(this).val())">
+            </div>
+            <div class="form-group">
+                <label for="add_firmware">Firmware</label>
+                <input id="add_firmware" type="text" class="form-control"
+                       onkeyup="new_product.firmware = $(this).val()"
+                       onchange="update_table_confirm('#confirm_firmware', $(this).val())">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3">
+        <form>
+            <div class="form-group">
+                <label for="add_description">Description</label>
+                <textarea id="add_new_sensor_description" class="form-control" rows="10" style="resize: none;"
+                        onkeyup="new_product.description = $(this).val()"
+                        onchange="update_table_confirm('#confirm_description', $(this).val())"></textarea>
+            </div>
+        </form>
+    </div>
+</div>

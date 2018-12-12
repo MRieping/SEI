@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Filter -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="input-group">
+            <input id="input_general_search" type="text" class="form-control" placeholder="Anything">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Name">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Number">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Owner">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Elements">
+            <div class="input-group-btn">
+              <button class="btn btn-weseras" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Filter -->
+<hr class="seperator">
+<!-- empty table to fill with list of products -->
+<div class="row">
+    <table class="table table-responsive table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Owner</th>
+                <th>Elements</th>
+            </tr>
+        </thead>
+        <tbody id="table_products">
+            <tr class="table-row">
+                <td>Max Mustermann</td>
+                <td>42</td>
+                <td>Weseras</td>
+                <td>Test</td>
+            </tr>
+            <tr class="table-row">
+                <td>Laura Musterfrau</td>
+                <td>64</td>
+                <td>AVT</td>
+                <td>leer</td>
+            </tr>
+            <tr class="table-row">
+                <td>Test</td>
+                <td>38</td>
+                <td>Weseras</td>
+                <td>nichts</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- /empty table to fill with list of products -->
+<script src="js/searching.js"></script>

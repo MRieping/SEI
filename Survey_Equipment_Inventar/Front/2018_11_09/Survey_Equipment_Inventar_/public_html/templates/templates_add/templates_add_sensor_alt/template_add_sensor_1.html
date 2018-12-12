@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Modal-body for add new sensor -->
+<div class='row'>
+    <div class="col-xs-6">
+        <div class="alert alert-error" id="alert_error_selected_location" role="alert" style="display:none; margin-bottom: 5px;">
+            Please select at least one location.
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="alert alert-error" id="alert_error_selected_possible_locations" role="alert" style="display:none; margin-bottom: 5px;">
+            Please select at least one location.
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6 location_list">
+        <p class="text_weseras" style = "text-align: center;">Please select where the sensor is located.</p>
+        <form id="add_new_sensor_select_location_list">
+            <div class = 'radio'><label>
+                <input id='add_new_sensor_select_location_list_tent_radio' type = 'radio' name = 'optradio' value = 'Lent' class = rad>Lent (not implemented yet)</label>
+            </div>
+            <div class="row hidden">
+                <div class='col-xs-12'>
+                    <div class="form-group">
+                        <label for="add_new_sensor_select_location_list_tent_since">Since</label>
+                        <input id="add_new_sensor_select_location_list_tent_since" type="text" class="form-control input-sm" placeholder="YYYY-MM-DD">
+                    </div>
+                    <div class="form-group">
+                        <label for="add_new_sensor_select_location_list_tent_till">Till</label>
+                        <input id="add_new_sensor_select_location_list_tent_till" type="text" class="form-control input-sm" placeholder="YYYY-MM-DD">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-6 location_list">
+        <p class="text_weseras" style = "text-align: center;">Please select where it is allowed to store or to install the sensor.</p>
+        <form style='margin-bottom: 5px;'>
+            <label class="radio-inline">
+                <input id='add_new_sensor_select_possible_locations_select_all' type="radio" name="optradio" checked>Select all
+            </label>
+            <label class="radio-inline">
+                <input id='add_new_sensor_select_possible_locations_select_none' type="radio" name="optradio">Select none
+            </label>
+        </form>
+        <form id="add_new_sensor_select_possible_locations_list">
+            
+        </form>
+    </div>
+</div>
+<hr class="seperator">
+<p class="text_weseras" style="text-align: center;">Not included? Create a new location. (not implemented yet)</p>
+<button id="btn_add_location_from_modal_add_sensor" class="btn btn-sm btn-weseras center-block" type="button">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+</button>
+<nav>
+    <ul class="pager">
+        <li id="btn_add_sensor_continue_first_step" class="next"><a href="#" class="text_weseras"><span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
+<!--/Modal-body for add new sensor -->
+<script src="js/fetch_data/fetch_locations.js"></script>
+<script src="js/forms.js"></script>
+<script>
+$(document).ready(function() {
+    
+    get_locations('#add_new_sensor_select_location_list', 'list', 'radio', 'storages');
+    get_locations('#add_new_sensor_select_location_list', 'list', 'radio', 'aircrafts');
+    get_locations('#add_new_sensor_select_possible_locations_list', 'list', 'check', 'storages');
+    get_locations('#add_new_sensor_select_possible_locations_list', 'list', 'check', 'aircrafts');
+    
+    //get_storages('#add_new_sensor_select_location_list', 'list', 'radio');
+    //get_aircrafts('#add_new_sensor_select_location_list', 'list', 'radio');
+    //get_storages('#add_new_sensor_select_possible_locations_list', 'list', 'check');
+    //get_aircrafts('#add_new_sensor_select_possible_locations_list', 'list', 'check');
+    
+    $('#add_new_sensor_select_possible_locations_select_all').click(function(){$("input:checkbox").prop('checked', true);});
+    $('#add_new_sensor_select_possible_locations_select_none').click(function(){$("input:checkbox").prop('checked', false);});
+
+    $('#btn_add_sensor_continue_first_step').on('click', function(){
+        
+        selected_location = get_values_of_radios();
+        selected_possible_locations = get_values_of_checkboxes();
+        
+        new_product.location = selected_location[0];
+        new_product.possible_locations = selected_possible_locations;
+        
+        if(selected_location.length === 0) {
+            $('#alert_error_selected_location').fadeIn();
+            setTimeout(function () {$('#alert_error_selected_location').fadeOut();}, 7342); 
+        } else if(selected_possible_locations.length === 0) {
+            $('#alert_error_selected_possible_locations').fadeIn();
+            setTimeout(function () {$('#alert_error_selected_possible_locations').fadeOut();}, 7342); 
+        } else if(selected_location[0] === 'Lent') {
+            // verify if date and not empty
+        } else {
+            console.log("Try to change template for modal for adding new product to 'add_sensor_2'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_2.html');
+        }
+    });
+    
+    $('#btn_add_location_from_modal_add_sensor').on('click', function(){
+        console.log("Try to change template to 'add_location_1");
+        $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_location_1.html');
+    });
+});
+</script>

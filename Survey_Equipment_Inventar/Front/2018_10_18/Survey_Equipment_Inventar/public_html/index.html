@@ -1,0 +1,158 @@
+<!doctype html>
+    <!-- head --> 
+    <head>
+        <!-- meta --> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Survey Equipment Inventar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- /meta --> 
+        <!-- css --> 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
+        <link rel="stylesheet" href="css/bootstrap_overwrite.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+        <!-- /css --> 
+        <!-- js -->  
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+        <!-- /js -->
+    </head>
+    <!-- /head --> 
+    <!-- body --> 
+    <body>
+        <!-- header --> 
+        <div class="header">   
+            <h4 class="footer_text">Survey Equipment Inventar</h4>
+        </div>
+        <!-- /header -->   
+        <!-- container --> 
+        <div class="content" style="margin-top: 1em;">
+            <div class="row">
+                <!-- Choosing type of product -->
+                <div class="col-xs-3">
+                    <div class="dropdown">
+                        <button class="btn btn-weseras dropdown-toggle center" style="border-color: white;" type="button" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        <ul class="dropdown-menu center">
+                            <li class="dropdown-header">Products</li>
+                            <li id="btn_search_all"><a href="#">All</a></li>
+                            <li id="btn_search_sensors"><a href="#">Sensors</a></li>
+                            <li id="btn_search_harddisks"><a href="#">Harddisks</a></li>
+                            <li id="btn_search_cabels"><a href="#">Cabels</a></li>
+                            <li class="dropdown-header">Locations</li>
+                            <li id="btn_search_storages"><a href="#">Storages</a></li>
+                            <li id="btn_search_aircraft"><a href="#">Aircraft</a></li>
+                            <li id="btn_search_tenants"><a href="#">Tenants</a></li>
+                        </ul>
+                    </div>                               
+                </div>
+                <!-- /Choosing type of product -->
+                <!-- Add product -->
+                <div class="col-xs-3">
+                    <!--<button id="btn_show_modal_adding" data-toggle="modal" data-target="#modal_add" class="btn btn-weseras center-block" type="button">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                    </button>-->
+                    <div class="dropdown">
+                        <button class="btn btn-weseras dropdown-toggle center" style="border-color: white;" type="button" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </button>
+                        <ul class="dropdown-menu center">
+                            <li class="dropdown-header">Products</li>
+                            <li id="btn_add_new_sensor"><a href="#">Sensors</a></li>
+                            <li id="btn_add_new_harddisk"><a href="#">Harddisks</a></li>
+                            <li id="btn_add_new_cabel"><a href="#">Cabels</a></li>
+                            <li class="dropdown-header">Locations</li>
+                            <li id="btn_add_new_storage"><a href="#">Storages</a></li>
+                            <li id="btn_add_new_aircraft"><a href="#">Aircraft</a></li>
+                            <li id="btn_add_new_tenant"><a href="#">Tenants</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <!-- /Add product -->
+                <!-- Collocate products --> 
+                <div class="col-xs-3">
+                    <button id="btn_show_modal_collocate" data-toggle="modal" data-target="#modal_collocate" class="btn btn-weseras center-block" type="button">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;&nbsp;0
+                    </button>
+                </div>
+                <!-- Collocate products --> 
+                <!-- Add product -->
+                <div class="col-xs-3">
+                    <button id="btn_show_modal_help" data-toggle="modal" data-target="#modal_add" class="btn btn-weseras center-block" type="button">
+                        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><span class="badge badge_weseras"></span>
+                    </button>
+                </div>
+                <!-- /Add product -->
+            </div>
+            <hr class="seperator">
+            <!-- Search for all types -->
+            <div id="main_container">
+
+            </div>
+        </div>
+        <!-- /container -->
+        <!-- Modal for collocate products -->
+        <div class="modal fade" id="modal_collocate" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" id="add_product_header">Current selected products</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12" id="collocate_products_template">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-delete" type="button">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn btn-weseras" type="button">
+                            <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Modal for collocate products -->
+        <!-- Footer
+        <footer>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-8">
+                    <p class="footer_text">Weser Airborne Sensing GmbH & Co. KG</p>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-footer-help" type="button">Help</button>
+                </div>
+              </div>
+            </div>
+        </footer> -->
+        <!-- Footer -->
+        <!-- js --> 
+        <script src="js/fetch_data.js"></script>
+        <script src="js/templating.js"></script>
+        <!-- /js --> 
+    </body>
+    <!-- /body -->
+</html>

@@ -1,0 +1,5 @@
+- collocate !
+- editieren sowohl bei locations als auch bei products
+	- edit harddisk 'number'
+	- Tabellen related_products für adden und editieren reparien !!!
+- evtl. neue funktion: verschieben aller produkte von einem zu einem anderen ort (für den Fall, wenn alles aus einem Flugzeug entfernt wird)

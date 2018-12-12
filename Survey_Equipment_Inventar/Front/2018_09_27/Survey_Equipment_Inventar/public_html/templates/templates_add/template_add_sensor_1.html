@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class='row'>
+    <div class="col-xs-6">
+        <div class="alert alert-error" id="alert_error_selected_location" role="alert" style="display:none; margin-bottom: 5px;">
+            Please select at least one location.
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="alert alert-error" id="alert_error_selected_possible_locations" role="alert" style="display:none; margin-bottom: 5px;">
+            Please select at least one location.
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Add new sensor</p>
+    </div>
+</div>
+<hr class="seperator">
+<div class="panel-group" id="accordion1">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                    Collapsible Group 1
+                </a>
+            </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <table id="add_new_sensor_table_location" class="display responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Line</th>
+                            <th>Box</th>
+                        </tr>
+                    </thead>
+                    <tbody id="add_new_sensor_table_location_body">
+                        <tr class='table_row_placeholder'>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Box</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-group" id="accordion2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                    Collapsible Group 2
+                </a>
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <table id="add_new_sensor_table_possible_locations" class="display responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Line</th>
+                            <th>Box</th>
+                        </tr>
+                    </thead>
+                    <tbody id="add_new_sensor_table_possible_locations_body">
+                        <tr class='table_row_placeholder'>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                            <td>Placeholder</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Box</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> 
+<script src="js/data_tables.js"></script>
+<script>
+$(document).ready(function() {
+    
+    table_filter_by_col_and_select_single_row(
+        '#add_new_sensor_table_location', 
+        '#add_new_sensor_table_location_body'
+    );
+    
+    table_filter_by_col_and_select_multiple_rows(
+        '#add_new_sensor_table_possible_locations', 
+        '#add_new_sensor_table_possible_locations_body', 
+        []
+    );
+
+    /*
+    $('#btn_add_sensor_continue_first_step').on('click', function(){
+        
+        selected_location = get_values_of_radios();
+        selected_possible_locations = get_values_of_checkboxes();
+        
+        new_product.location = selected_location[0];
+        new_product.possible_locations = selected_possible_locations;
+        
+        if(selected_location.length === 0) {
+            $('#alert_error_selected_location').fadeIn();
+            setTimeout(function () {$('#alert_error_selected_location').fadeOut();}, 7342); 
+        } else if(selected_possible_locations.length === 0) {
+            $('#alert_error_selected_possible_locations').fadeIn();
+            setTimeout(function () {$('#alert_error_selected_possible_locations').fadeOut();}, 7342); 
+        } else if(selected_location[0] === 'Lent') {
+            // verify if date and not empty
+        } else {
+            console.log("Try to change template for modal for adding new product to 'add_sensor_2'");
+            $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_sensor_2.html');
+        }
+    });
+    
+    $('#btn_add_location_from_modal_add_sensor').on('click', function(){
+        console.log("Try to change template to 'add_location_1");
+        $('#main_container').load('templates/templates_add/templates_add_sensor/template_add_location_1.html');
+    });*/
+});
+</script>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Search for sensors</p>
+    </div>
+</div>
+<hr class="seperator">
+<div class="row">
+    <div class="fw-body">
+        <div class="content">
+            <table id="table_sensors" class="display responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                        <th>Lowness</th>
+                        <th>Location</th>
+                        <th>Serial Number</th>
+                        <th>P Number</th>
+                        <th>Software</th>
+                        <th>Firmware</th>
+                    </tr>
+                </thead>
+                <tbody id="table_sensors_body">
+                    <tr class='table_row_placeholder'>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Height</th>
+                        <th>Width</th>
+                        <th>Lowness</th>
+                        <th>Location</th>
+                        <th>Serial Number</th>
+                        <th>P Number</th>
+                        <th>Software</th>
+                        <th>Firmware</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal for single item -->
+<div class="modal fade" id="modal_item_sensor" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal_item_sensor_header" class="modal-title">unknown</h4>
+            </div>
+            <div id="modal_item_sensor_body" class="modal-body">
+                <table id="table_edit_sensor" class="display responsive" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_edit_sensor_body">
+                        <tr>
+                            <td>Number</td>
+                            <td id="modal_item_sensor_number"></td>
+                        </tr>
+                        <tr>
+                            <td>Location</td>
+                            <td id="modal_item_sensor_location"></td>
+                        </tr>
+                        <tr>
+                            <td>Owner</td>
+                            <td id="modal_item_sensor_owner"></td>
+                        </tr>
+                        <tr>
+                            <td>Elements</td>
+                            <td id="modal_item_sensor_elements"></td>
+                        </tr>
+                        <tr>
+                            <td>Height [cm]</td>
+                            <td id="modal_item_sensor_height"></td>
+                        </tr>
+                        <tr>
+                            <td>Width [cm]</td>
+                            <td id="modal_item_sensor_width"></td>
+                        </tr>
+                        <tr>
+                            <td>Lowness [cm]</td>
+                            <td id="modal_item_sensor_lowness"></td>
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                            <td id="modal_item_sensor_description"></td>
+                        </tr>
+                        <tr>
+                            <td>Serial Number</td>
+                            <td id="modal_item_sensor_s_number"></td>
+                        </tr>
+                        <tr>
+                            <td>P Number</td>
+                            <td id="modal_item_sensor_p_number"></td>
+                        </tr>
+                        <tr>
+                            <td>Software</td>
+                            <td id="modal_item_sensor_software"></td>
+                        </tr>
+                        <tr>
+                            <td>Firmware</td>
+                            <td id="modal_item_sensor_firmware"></td>
+                        </tr>
+                        <tr>
+                            <td>Possible locations</td>
+                            <td>
+                                <div id="modal_item_possible_locations" class="list-group">
+
+                                </div> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Related equipment</td>
+                            <td>
+                                <div id="modal_item_sensor_related_euqipment" class="list-group">
+
+                                </div> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="modal_item_sensor_info" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_picture" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                </button>
+                 <button id="modal_item_sensor_edit" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_collocate" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_delete" class="btn btn-delete" type="button">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal for single item -->
+<!-- Modal for asking: Sure to delete? -->
+<div class="modal fade" id="modal_item_sensor_sure_delete" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Are you sure to delete this sensor?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group btn-toggle"> 
+                    <button id="delete_sensor_sure_yes" class="btn btn-sm btn-toggle-on">Yes</button>
+                    <button id="delete_sensor_sure_no" class="btn btn-sm btn-toggle-off">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal for asking: Sure to delete? -->
+<!-- -->
+<script src="js/data_tables.js"></script>
+<script>
+    // ...
+    $(document).ready(function() {
+                
+        table_filter_by_col('#table_sensors');
+        
+        $('#table_edit_sensor').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+        
+        $(".row_item").click(function() {
+            clicked_item_number = this.cells.item(0).innerHTML;
+            get_single_product('sensors', clicked_item_number);
+        });
+
+        $("#modal_item_sensor_delete").click(function() {
+            $('#modal_item_sensor_sure_delete').modal('toggle');
+        });
+        
+        $("#delete_sensor_sure_no").click(function() {
+            $('#modal_item_sensor_sure_delete').modal('hide');
+        });
+        
+        $("#delete_sensor_sure_yes").click(function() {
+            $('#modal_item_sensor_sure_delete').modal('hide');
+            delete_product($('#modal_item_sensor_number').text());
+        });
+    });
+</script>

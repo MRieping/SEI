@@ -1,0 +1,108 @@
+<!doctype html>
+    <!-- head --> 
+    <head>
+        <!-- meta --> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Survey Equipment Inventar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- /meta --> 
+        <!-- css --> 
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/bootstrap_overwrite.css">
+        <!-- /css --> 
+        <!-- js --> 
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>');</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <!-- /js -->
+    </head>
+    <!-- /head --> 
+    <!-- body --> 
+    <body>
+        <!-- header --> 
+        <div class="header">   
+            <h3 class="footer_text">Survey Equipment Inventar</h3>
+        </div>
+        <!-- /header -->  
+        <!-- tabs --> 
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a data-toggle="tab" href="#search_products">Search and edit</a></li>
+            <li><a data-toggle="tab" href="#collocate_products">Collocate</a></li>
+            <li><a data-toggle="tab" href="#add_product">Add</a></li>
+            <li><a data-toggle="tab" href="#storages">Storages</a></li>
+            <li><a data-toggle="tab" href="#aircrafts">Aircraft</a></li>            
+        </ul>
+        <!-- /tabs --> 
+        <hr class="seperator"> 
+        <!-- container --> 
+        <div class="content">
+            <!-- tab content --> 
+            <div class="tab-content">
+                <!-- tab content search products--> 
+                <div id="search_products" class="tab-pane fade in active">
+                    <!-- Choosing type of product --> 
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <!-- empty col -->
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="dropdown">
+                                <button class="btn btn-weseras dropdown-toggle center" type="button" data-toggle="dropdown">Type
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu center">
+                                  <li id="btn_search_all"><a href="#">All</a></li>
+                                  <li id="btn_search_camera"><a href="#">Cameras</a></li>
+                                  <li><a href="#">Harddisks</a></li>
+                                  <li id="btn_search_cabel"><a href="#">Cabels</a></li>
+                                </ul>
+                            </div>                               
+                        </div>
+                        <div class="col-xs-4">
+                            <!-- empty col -->
+                        </div>
+                    </div>
+                    <hr class="seperator">
+                    <!-- /Choosing type of product -->
+                    <!-- Search for all types -->
+                    <div id="search_products_template">
+                        
+                    </div>
+                </div>
+                <!-- /tab content search products-->
+                <!-- tab content collocate products--> 
+                <div id="collocate_products" class="tab-pane fade">
+
+                </div>
+                <!-- /tab content collocate products-->
+                <!-- tab content add products--> 
+                <div id="add_product" class="tab-pane fade">
+
+                </div>
+                <!-- /tab content add products-->
+                <!-- tab content storages--> 
+                <div id="storages" class="tab-pane fade">
+
+                </div>
+                <!-- /tab content storages-->
+                <!-- tab content aircrafts--> 
+                <div id="aircrafts" class="tab-pane fade">
+
+                </div>
+                <!-- /tab content aircrafts--> 
+            </div>
+        </div> 
+        <!-- /container -->
+        <!-- footer 
+        <footer>
+            <p class="footer_text">WESER Airborne Sensing GmbH & Co. KG</p>
+        </footer>
+         /footer --> 
+        <!-- js --> 
+        <script src="js/templating.js"></script>
+        <!-- /js --> 
+    </body>
+    <!-- /body --> 
+</html>

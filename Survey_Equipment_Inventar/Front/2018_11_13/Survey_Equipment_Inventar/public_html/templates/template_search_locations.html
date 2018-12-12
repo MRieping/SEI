@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p id="header_search_locations" style="color: #003e8c; margin-top: 0.375em;">Search for</p>
+    </div>
+</div>
+<hr class="seperator">
+<div class="row">
+    <div class="fw-body">
+        <div class="content">
+            <table id="table_search_locations" class="display responsive" style="width:100%">
+                <thead>
+                    <tr id="table_search_locations_head">
+
+                    </tr>
+                </thead>
+                <tbody id="table_search_locations_body">
+
+                </tbody>
+                <tfoot>
+                    <tr id="table_search_locations_foot">
+
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal for single location -->
+<div class="modal fade" id="modal_single_location" role="dialog">
+    <div class="modal-dialog" style="width: 90%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal_single_location_header" class="modal-title">unknown</h4>
+            </div>
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active"><a data-toggle="tab" href="#modal_single_product_attributes">Attributes</a></li>
+                <li><a data-toggle="tab" href="#modal_single_product_edit">Edit</a></li>
+            </ul>
+            <div id="modal_single_location_body" class="modal-body">
+                <div class="tab-content">
+                    <div id="modal_single_locationt_attributes" class="tab-pane fade in active">
+                        <table id="modal_single_product_table" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody id="modal_single_location_table_body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="modal_single_product_edit" class="tab-pane fade in active">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal_single_product_delete" class="btn btn-delete" type="button">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal for single location -->
+<!-- Modal for deleting single location -->
+<div class="modal fade" role="dialog" id="modal_single_location_delete_sure">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Sure to delete?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group btn-toggle"> 
+                    <button id="modal_single_location_delete_sure_yes" class="btn btn-sm btn-toggle-off">Yes</button>
+                    <button id="modal_single_location_delete_sure_no" class="btn btn-sm btn-toggle-on active">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal for deleting single location -->
+<!-- -->
+<script src="js/data_tables.js"></script>
+<script>
+    // ...
+    $(document).ready(function () {
+
+        //...
+        $('#header_search_locations').text('Search for ' + current_search_type);
+
+        // ...
+        get_locations(2, current_search_type);
+
+        // ...
+        /*$('#table_search_locations tbody').on('click', 'tr', function () {
+            clicked_item_number = this.cells.item(0).innerHTML;
+            clicked_item_number = clicked_item_number.toString();
+            //get_single_product('sensors', clicked_item_number);
+            //get_single_location(clicked_item_number, current_search_type);
+        });*/
+
+        // ...
+        $("#modal_single_location_delete").click(function () {
+            $('#modal_single_locatio_delete_sure').modal('toggle');
+        });
+        $("#modal_single_locatio_delete_sure_no").click(function () {
+            $('#modal_single_locatio_delete_sure').modal('hide');
+        });
+        $("#modal_single_locatio_delete_sure_yes").click(function () {
+            $('#modal_single_location_delete_sure').modal('hide');
+            $('#modal_single_location').modal('hide');
+            delete_product($('#modal_single_location_header').text());
+        });
+    });
+</script>
+

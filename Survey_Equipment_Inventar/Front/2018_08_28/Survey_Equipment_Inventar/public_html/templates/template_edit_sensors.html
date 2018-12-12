@@ -1,0 +1,79 @@
+<table id="table_edit_sensor" class="display responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Number</td>
+            <td id="modal_item_sensor_number">unknown</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td id="modal_item_sensor_name">unknown</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td id="modal_item_sensor_location">unknown</td>
+        </tr>
+        <tr>
+            <td>Owner</td>
+            <td id="modal_item_sensor_owner">unknown</td>
+        </tr>
+        <tr>
+            <td>Elements</td>
+            <td id="modal_item_sensor_elements">unknown</td>
+        </tr>
+        <tr>
+            <td>Height</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Lowness</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Serial Number</td>
+            <td id="modal_item_sensor_s_number">unknown</td>
+        </tr>
+        <tr>
+            <td>P Number</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Software</td>
+            <td>unknown</td>
+        </tr>
+        <tr>
+            <td>Firmware</td>
+            <td>unknown</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    // ...
+    $(document).ready(function() {
+        //
+        $('#table_edit_sensor').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+    });
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Searching for sensors</p>
+    </div>
+</div>
+<hr class="seperator">
+<div class="row">
+    <div class="fw-body">
+        <div class="content">
+            <table id="table_sensors" class="display responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Serial Number</th>
+                        <th>P Number</th>
+                        <th>Software</th>
+                        <th>Firmware</th>
+                    </tr>
+                </thead>
+                <tbody id="table_sensors_body">
+                    <tr class='table_row_placeholder'>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                        <td>Placeholder</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Elements</th>
+                        <th>Serial Number</th>
+                        <th>P Number</th>
+                        <th>Software</th>
+                        <th>Firmware</th>
+                        <th>Location</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal for single item -->
+<div class="modal fade" id="modal_item_sensor" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 id="modal_item_sensor_header" class="modal-title">unknown</h4>
+            </div>
+            <div id="modal_item_sensor_body" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button id="modal_item_sensor_info" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_picture" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                </button>
+                 <button id="modal_item_sensor_edit" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_collocate" class="btn btn-weseras" type="button">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                </button>
+                <button id="modal_item_sensor_delete" class="btn btn-delete" type="button">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Modal for single item -->
+<!-- -->
+<script src="js/data_tables.js"></script>
+<script>
+    // ...
+    $(document).ready(function() {
+        // ...
+        table_filter_by_col('#table_sensors');
+        // ...
+        //$(".col_id").hide();
+        // ...
+        $('#modal_item_sensor_body').load('templates/templates_edit/template_edit_sensors.html');
+        //edit_table_sensor('#modal_item_sensor');
+    });
+    
+    /*$(".row_item").click(function() {
+        textcontent = this.textContent;
+        textcontent_split = textcontent.split("\n");
+        console.log("clicked row with this item number:");
+        console.log(textcontent_split[1]);
+        get_single_sensor(textcontent_split[1]);
+        $('#modal_item_sensor').modal('toggle');
+    });*/
+    
+    $(".row_item").click(function() {
+        clicked_item_number = this.cells.item(0).innerHTML;
+        get_single_product('sensors', clicked_item_number);
+    });
+</script>

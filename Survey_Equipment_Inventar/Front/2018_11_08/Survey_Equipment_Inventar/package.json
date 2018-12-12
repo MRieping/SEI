@@ -1,0 +1,15 @@
+{
+    "name": "Survey_Equipment_Inventar",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "MRieping",
+    "contributors": [
+    ],
+    "dependencies": {}
+}

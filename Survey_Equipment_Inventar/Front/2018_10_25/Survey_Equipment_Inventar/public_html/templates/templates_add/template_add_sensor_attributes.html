@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- ... -->
+<form>
+    <div class="form-group">
+        <label for="add_s_number">Serial Number**</label>
+        <input id="add_s_number" type="text" class="form-control"
+               onkeyup="new_product.s_number = $(this).val()"
+               onchange="update_table_confirm('#confirm_s_number', $(this).val())">
+    </div>
+    <div class="form-group">
+        <label for="add_p_number">P Number</label>
+        <input id="add_p_number" type="text" class="form-control"
+               onkeyup="new_product.p_number = $(this).val()"
+               onchange="update_table_confirm('#confirm_p_number', $(this).val())">
+    </div>
+    <div class="form-group">
+        <label for="add_software">Software</label>
+        <input id="add_software" type="text" class="form-control"
+               onkeyup="new_product.software = $(this).val()"
+               onchange="update_table_confirm('#confirm_software', $(this).val())">
+    </div>
+    <div class="form-group">
+        <label for="add_firmware">Firmware</label>
+        <input id="add_firmware" type="text" class="form-control"
+               onkeyup="new_product.firmware = $(this).val()">
+    </div>
+</form>

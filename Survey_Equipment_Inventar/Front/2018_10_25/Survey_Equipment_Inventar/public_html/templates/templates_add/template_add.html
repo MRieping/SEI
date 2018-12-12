@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- ... -->
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <p style="color: #003e8c; margin-top: 0.375em;">Add new sensor</p>
+    </div>
+</div>
+<hr class="seperator">
+<ul class="nav nav-tabs nav-justified">
+    <li class="active"><a data-toggle="tab" href="#add_tab_location">Location</a></li>
+    <li><a data-toggle="tab" href="#add_tab_relations">Relations</a></li>
+    <li><a data-toggle="tab" href="#add_tab_attributes">Attributes</a></li>
+    <li><a data-toggle="tab" href="#add_tab_photos">Photos</a></li>
+    <li><a data-toggle="tab" href="#add_tab_confirm">Confirm</a></li>
+</ul>
+<div class="tab-content">
+    <div id="add_tab_location" class="tab-pane fade in active">
+        <div class="row">
+            <div class="col-sm-4">
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Please select the real location.
+                        </p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button id="add_missing_location" type="button" class="btn btn-sm btn-weseras btn-full-width">
+                            Missing location?
+                        </button>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_table_location" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_table_location_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Please select possible locations (optional).
+                        </p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn-group btn-toggle pull-right"> 
+                            <button id="add_btn_toggle_possible_locations_all" class="btn btn-sm btn-toggle-off">All</button>
+                            <button id="add_btn_toggle_possible_locations_none" class="btn btn-sm btn-toggle-on active">None</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_table_possible_locations" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_table_possible_locations_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="text_weseras" style = "text-align: center;">
+                            Borrowed?
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-error" id="add_alert_loan" role="alert" style="display:none; margin-bottom: 5px;">
+                        </div>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn-group btn-toggle pull-right"> 
+                            <button id="add_btn_toggle_borrowed_yes" class="btn btn-sm btn-toggle-off">Yes</button>
+                            <button id="add_btn_toggle_borrowed_no" class="btn btn-sm btn-toggle-on active">No</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="add_loan_since">Since</label>
+                                <input id="add_loan_since" type="date" class="form-control"
+                                       onchange="new_product.loan_since = $(this).val();">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="add_loan_till">Till</label>
+                                <input id="add_loan_till" type="date" class="form-control"
+                                       onchange="new_product.loan_till = $(this).val();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="add_loan_tenant">Tenant</label>
+                                <input id="add_loan_tenant" type="text" class="form-control"
+                                       onchange="new_product.loan_tenant = $(this).val();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="add_number">Booking Number</label>
+                                <input id="add_loan_number" type="text" class="form-control"
+                                       onchange="new_product.loan_number = $(this).val();">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="add_tab_relations" class="tab-pane fade">
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <p id="add_new_sensor_info_text_related_equipment" class="text_weseras" style = "text-align: center;">
+                    Please select related equipment and describe the relation (optional). 
+                </p>
+            </div>
+        </div>
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="add_table_related_equipment" class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Owner</th>
+                                    <th>Elements</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="add_table_related_equipment_body">
+                                <tr class='table_row_placeholder'>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                    <td>Placeholder</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Name</th>
+                                    <th>Owner</th>
+                                    <th>Elements</th>
+                                    <th>Description</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_tab_attributes" class="tab-pane fade">
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class='text_weseras' style="text-align: center;">Please fill in this form 
+                            (*only numbers, **required, **required and only numbers)</p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_number">Number***</label>
+                                <input id="add_number" type="text" class="form-control" 
+                                       onkeyup="new_product.item_number = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_number', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_name">Name**</label>
+                                <input id="add_name" type="text" class="form-control"
+                                       onkeyup="new_product.item_name = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_name', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_elements">Elements**</label>
+                                <input id="add_elements" type="text" class="form-control"
+                                       onkeyup="new_product.elements = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_elements', $(this).val())">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_owner">Owner**</label>
+                                <input id="add_owner" type="text" class="form-control"
+                                       onkeyup="new_product.owner = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_owner', $(this).val())">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_height">Height [cm]*</label>
+                                <input id="add_height" type="text" class="form-control" 
+                                       onkeyup="new_product.height = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_height', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_width">Width [cm]*</label>
+                                <input id="add_width" type="text" class="form-control" 
+                                       onkeyup="new_product.width = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_width', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_lowness">Lowness [cm]*</label>
+                                <input id="add_lowness" type="text" class="form-control" 
+                                       onkeyup="new_product.lowness = $(this).val()"
+                                       onchange="update_table_confirm('#confirm_lowness', $(this).val())"
+                                       onkeypress="return isNumber(event)">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-3">
+                        <div id="add_div_attributes">
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="add_description">Description</label>
+                                <textarea id="add_new_sensor_description" class="form-control" rows="10" style="resize: none;"
+                                        onkeyup="new_product.description = $(this).val()"
+                                        onchange="update_table_confirm('#confirm_description', $(this).val())"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_tab_photos" class="tab-pane fade">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-weseras" id="add_alert_photo" role="alert" style="display:none; margin-bottom: 5px;">
+                    Photo is already uploaded.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class='text_weseras' style="text-align: center;">Please upload at least one photo.</p>
+                    </div>
+                </div>
+                <hr class="seperator">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--<input type="file" id="upload_images_sensor" name="files[]" multiple />
+                        <output id="upload_images_sensor_list"></output>-->
+                        <input type="file" id="upload_images_input"/>
+                        <div id="upload_images_div"></div>
+                        <!--<input type="file" onchange="encodeImageFileAsURL(this)"/>
+                        <output id="list"></output>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="add_tab_confirm" class="tab-pane fade">
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="add_btn_send" class="btn btn-sm btn-weseras center-block" type="button" style="margin-bottom: 5px;">
+                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Send
+                </button>
+            </div>
+        </div>
+        <hr class="seperator">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-error" id="add_alert" role="alert" style="display:none; margin-bottom: 5px;">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div id="add_div_confirm"  class="col-sm-12">
+                        
+                    </div>
+                </div>
+                <div class="row" style='margin-top: 5px;'>
+                    <div class="col-sm-12">
+                        <p class="text_weseras">*required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="display responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Possible locations</td>
+                                    <td>
+                                        <textarea disabled id="confirm_possible_locations" 
+                                                  style = "resize: none;" rows="5">
+                                        </textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Related equipment</td>
+                                    <td>
+                                        <textarea disabled id="confirm_related_euqipment" 
+                                                  style = "resize: none;" rows="5">
+                                        </textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/data_tables.js"></script>
+<script src='js/upload_images.js'></script>
+<script>
+    $(document).ready(function() {
+        
+        var type = new_product.type;
+        type = type.toLowerCase();
+        var template_dic = 'templates/templates_add/template_add_';
+        template_dic = template_dic.concat(type);
+        template_dic_attr = template_dic.concat('_attributes.html');
+        template_dic_confirm = template_dic.concat('_confirm.html');
+        console.log("Try to fill tab attributes with template " + template_dic_attr);
+        $('#add_div_attributes').load(template_dic_attr);
+        console.log("Try to fill tab attributes with template '" + template_dic_confirm);
+        $('#add_div_confirm').load(template_dic_confirm);
+
+        table_select_location(new_product);
+        
+        toggle_buttons_possible_locations(new_product);
+
+        table_select_possible_locations(new_product);
+        
+        toggle_buttons_loan(new_product);
+
+        table_select_related_equipment(new_product);
+
+        upload_image();
+        //document.getElementById('upload_images_sensor').addEventListener('change', upload_images, false);
+        //document.getElementById('upload_images_sensor_input').addEventListener('change', upload_images, false);
+
+        $('#add_btn_send').click(function() {templating_add_sending(new_product);});
+    });
+</script>

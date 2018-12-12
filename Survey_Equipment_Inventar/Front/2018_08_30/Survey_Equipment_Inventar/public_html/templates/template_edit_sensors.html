@@ -1,0 +1,97 @@
+<table id="table_edit_sensor" class="display responsive" style="width:100%">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Number</td>
+            <td id="modal_item_sensor_number">unknown</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td id="modal_item_sensor_location">unknown</td>
+        </tr>
+        <tr>
+            <td>Owner</td>
+            <td id="modal_item_sensor_owner">unknown</td>
+        </tr>
+        <tr>
+            <td>Elements</td>
+            <td id="modal_item_sensor_elements">unknown</td>
+        </tr>
+        <tr>
+            <td>Height [cm]</td>
+            <td id="modal_item_sensor_height">unknown</td>
+        </tr>
+        <tr>
+            <td>Width [cm]</td>
+            <td id="modal_item_sensor_width">unknown</td>
+        </tr>
+        <tr>
+            <td>Lowness [cm]</td>
+            <td id="modal_item_sensor_lowness">unknown</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td id="modal_item_sensor_description">unknown</td>
+        </tr>
+        <tr>
+            <td>Serial Number</td>
+            <td id="modal_item_sensor_s_number">unknown</td>
+        </tr>
+        <tr>
+            <td>P Number</td>
+            <td id="modal_item_sensor_p_number">unknown</td>
+        </tr>
+        <tr>
+            <td>Software</td>
+            <td id="modal_item_sensor_software">unknown</td>
+        </tr>
+        <tr>
+            <td>Firmware</td>
+            <td id="modal_item_sensor_firmware">unknown</td>
+        </tr>
+        <tr>
+            <td>Related cabels</td>
+            <td>
+                <div id="modal_item_sensor_related_cabels" class="list-group">
+                    <!-- <a href="#" class="list-group-item">First item</a>
+                    <a href="#" class="list-group-item">Second item</a>
+                    <a href="#" class="list-group-item">Third item</a> -->
+                </div> 
+            </td>
+        </tr>
+        <tr>
+            <td>Related aircraft</td>
+            <td>
+                <div id="modal_item_sensor_related_aircraft" class="list-group">
+
+                </div> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    // ...
+    $(document).ready(function() {
+        //
+        $('#table_edit_sensor').DataTable( {
+            responsive: {
+                details: {
+                    display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                    type: ''
+                }
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            "paging":   false,
+            "ordering": false,
+            "info":     false
+        });
+    });
+</script>
